@@ -13,6 +13,7 @@ gem "rails", "~> 6.1.1"
 gem "redis", "~> 4.2"
 gem "sass-rails", ">= 6"
 gem "sentry-raven", "~> 3.1"
+gem "serviceworker-rails", "~> 0.6.0"
 gem "sidekiq", "~> 6.1"
 gem "sidekiq-cron", "~> 1.2"
 gem "turbolinks", "~> 5"
@@ -32,7 +33,6 @@ group :development do
   gem "letter_opener_web", "~> 1.4"
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
-  gem "serviceworker-rails", "~> 0.6.0"
   gem "standardrb", "~> 1.0", require: false
 end
 
