@@ -6,14 +6,15 @@ function onInstall(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function prefill(cache) {
       return cache.addAll([
-        <% [
-          Webpacker.instance.manifest.lookup('application.js'),
-          Webpacker.instance.manifest.lookup('application.css'),
-          asset_path("application.css"),
-        ].compact.each do |app_asset_path| %>
-          '<%= app_asset_path %>',
-        <% end %>
-        '/offline.html'
+
+        // make sure serviceworker.js is not required by application.js
+        // if you want to reference application.js from here
+        '<%#= asset_path "application.js" %>',
+
+        '<%= asset_path "application.css" %>',
+
+        '/offline.html',
+
       ]);
     })
   );
